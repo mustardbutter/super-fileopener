@@ -9,14 +9,12 @@ namespace FileRulette
     internal class ProgrammStarter
     {
         public void Run() { 
-            FileClerk parser = new FileClerk();
+            FileClerk fileClerk = new FileClerk();
             ConfigReader configReader = new ConfigReader();
 
-            
-
-            parser.SearchFolders();
-            parser.IndexFiles();
-            parser.ExecuteOne();
+            fileClerk.SearchFolders();
+            fileClerk.IndexFiles();
+            fileClerk.ExecuteOne();
         }
             
         

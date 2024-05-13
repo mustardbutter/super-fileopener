@@ -53,13 +53,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="ProgrammStarter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RouletteConfig.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="RouletteConfig.cfg">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

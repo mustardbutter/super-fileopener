@@ -10,8 +10,9 @@ namespace FileRulette
 {
     internal class FileClerk
     {
-        List<string> iternal_directories = new List<string>();
-        List<string> files = new List<string>();
+        private List<string> iternal_directories = new List<string>();
+        private List<string> files = new List<string>();
+
         ConfigReader ConfigReader = new ConfigReader();
         public void SearchFolders()
         {
