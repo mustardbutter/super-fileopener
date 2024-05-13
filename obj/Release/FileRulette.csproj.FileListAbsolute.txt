@@ -1,0 +1,7 @@
+G:\repos\FileRulette\FileRulette\bin\Release\FileRulette.exe.config
+G:\repos\FileRulette\FileRulette\bin\Release\FileRulette.exe
+G:\repos\FileRulette\FileRulette\bin\Release\FileRulette.pdb
+G:\repos\FileRulette\FileRulette\obj\Release\FileRulette.csproj.AssemblyReference.cache
+G:\repos\FileRulette\FileRulette\obj\Release\FileRulette.csproj.CoreCompileInputs.cache
+G:\repos\FileRulette\FileRulette\obj\Release\FileRulette.exe
+G:\repos\FileRulette\FileRulette\obj\Release\FileRulette.pdb
