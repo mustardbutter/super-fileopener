@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FileRulette.Classes;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +12,11 @@ namespace FileRulette
     {
         public void Run() { 
             FileClerk fileClerk = new FileClerk();
-            ConfigReader configReader = new ConfigReader();
 
             fileClerk.SearchFolders();
             fileClerk.IndexFiles();
             fileClerk.ExecuteOne();
-        }
             
-        
+        }
     }
 }

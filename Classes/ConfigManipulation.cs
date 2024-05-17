@@ -10,19 +10,63 @@ namespace FileRulette.Classes
 {
     internal class ConfigManipulation
     {
-        private string rootDir = @"G:\Картинки";
+        /*
+         *
+         *Добавить строку пути создания файла +
+         *Добавить метод проверки имеется ли там файл конфигурации
+         *Добавить метод создания файла конфигурации
+         *
+         *
+         */
 
-        public string getName
+        public static string configFilePathTemplate = @"C:\Users\" + getSystemName + @"\AppData\Roaming";
+        public static string configFilePathDir = configFilePathTemplate + @"\\fileRuletteCfg";
+        public static string configFilePath = configFilePathDir + @"\\fileRulletteConfig.txt";
+
+        public static string getSystemName
         {
             get
             {
                 return System.Security.Principal.WindowsIdentity.GetCurrent().Name;
             }
-
         }
 
-        public void configDrop() {
-            Directory.CreateDirectory(@"C:\Users\" + getName + @"\AppData\Roaming");
+        public string getConfigFilePathTemplate
+        {
+            get
+            {
+                return configFilePathTemplate;
+            }
         }
+
+        public string getConfigFilePath
+        {
+            get
+            {
+                return configFilePathDir;
+            }
+        }
+
+        public bool configDirectoryAvalibilityCheck() {
+            if (Directory.Exists(getConfigFilePath))
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        public bool configAvalibilityCheck() {
+            if (File.Exists(configFilePath))
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+
     }
 }

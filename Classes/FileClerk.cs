@@ -12,11 +12,13 @@ namespace FileRulette
     {
         private List<string> iternal_directories = new List<string>();
         private List<string> files = new List<string>();
+        private string rootDir = @"G:\Картинки";
 
         ConfigReader ConfigReader = new ConfigReader();
+
         public void SearchFolders()
         {
-            foreach (string folders in Directory.EnumerateDirectories(ConfigReader.rootDir))
+            foreach (string folders in Directory.EnumerateDirectories(rootDir))
             {
                 iternal_directories.Add(folders);
             }
@@ -32,7 +34,7 @@ namespace FileRulette
                 this.files.Add(files);
             }
 
-            foreach (string files in Directory.EnumerateFiles(ConfigReader.rootDir))
+            foreach (string files in Directory.EnumerateFiles(rootDir))
             {
                 this.files.Add(files);
             }

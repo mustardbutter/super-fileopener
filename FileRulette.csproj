@@ -48,10 +48,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ConfigCreator.cs" />
+    <Compile Include="Classes\ConfigManipulation.cs" />
     <Compile Include="Classes\ConfigReader.cs" />
     <Compile Include="Classes\FileClerk.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="ProgrammStarter.cs" />
+    <Compile Include="Classes\ProgrammStarter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
