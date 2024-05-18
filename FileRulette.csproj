@@ -51,6 +51,7 @@
     <Compile Include="Classes\ConfigCreator.cs" />
     <Compile Include="Classes\ConfigManipulation.cs" />
     <Compile Include="Classes\ConfigReader.cs" />
+    <Compile Include="Classes\ConfigWriter.cs" />
     <Compile Include="Classes\FileClerk.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Classes\ProgrammStarter.cs" />

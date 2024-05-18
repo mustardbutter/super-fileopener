@@ -12,9 +12,8 @@ namespace FileRulette
     {
         private List<string> iternal_directories = new List<string>();
         private List<string> files = new List<string>();
-        private string rootDir = @"G:\Картинки";
 
-        ConfigReader ConfigReader = new ConfigReader();
+        public string rootDir { get; set; }
 
         public void SearchFolders()
         {

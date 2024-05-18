@@ -9,19 +9,11 @@ using System.Xml.Linq;
 namespace FileRulette.Classes
 {
     internal class ConfigManipulation
-    {
-        /*
-         *
-         *Добавить строку пути создания файла +
-         *Добавить метод проверки имеется ли там файл конфигурации
-         *Добавить метод создания файла конфигурации
-         *
-         *
-         */
+    { 
 
-        public static string configFilePathTemplate = @"C:\Users\" + getSystemName + @"\AppData\Roaming";
-        public static string configFilePathDir = configFilePathTemplate + @"\\fileRuletteCfg";
-        public static string configFilePath = configFilePathDir + @"\\fileRulletteConfig.txt";
+        public static string configFilePathTemplate = @"C:\Users\" + getSystemName + @"\AppData\Roaming"; //C:\Users\musta\AppData\Roaming
+        public static string configFilePathDir = configFilePathTemplate + @"\fileRuletteCfg";
+        public static string configFilePath = configFilePathDir + @"\fileRulletteConfig.txt";
 
         public static string getSystemName
         {

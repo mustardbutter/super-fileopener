@@ -10,16 +10,13 @@ namespace FileRulette.Classes
     internal class ConfigCreator : ConfigManipulation
     {
         public void configDirectoryCreate() {
-            if (!configDirectoryAvalibilityCheck())
-            {
                 Directory.CreateDirectory(configFilePathDir);
-            }
         }
 
         public void configFileCreate() {
-            if (configAvalibilityCheck()) {
+            ConfigWriter writer = new ConfigWriter();
                 File.Create(configFilePath);
-            }
+                writer.writeBasicTemplateAsync(configFilePath);
         }
     }
 }
