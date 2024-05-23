@@ -11,15 +11,16 @@ namespace FileRulette.Classes
     internal class ConfigManipulation
     { 
 
-        public static string configFilePathTemplate = @"C:\Users\" + getSystemName + @"\AppData\Roaming"; //C:\Users\musta\AppData\Roaming
-        public static string configFilePathDir = configFilePathTemplate + @"\fileRuletteCfg";
-        public static string configFilePath = configFilePathDir + @"\fileRulletteConfig.txt";
+        public static string configFilePathTemplate = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData); //C:\Users\musta\AppData\Roaming
+        public static string configFilePathDir = configFilePathTemplate + @"\filerulettecfg";
+        public static string configFilePathTxt = configFilePathDir + @"\fileRulletteConfig";
+
 
         public static string getSystemName
         {
             get
             {
-                return System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+                return System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\').Last();
             }
         }
 
@@ -50,7 +51,7 @@ namespace FileRulette.Classes
         }
 
         public bool configAvalibilityCheck() {
-            if (File.Exists(configFilePath))
+            if (File.Exists(configFilePathTxt))
             {
                 return true;
             }

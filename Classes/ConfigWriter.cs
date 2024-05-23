@@ -10,10 +10,10 @@ namespace FileRulette.Classes
 {
     internal class ConfigWriter : ConfigManipulation
     {
-        public async Task writeBasicTemplateAsync(string directory) {
-            using (StreamWriter writer = new StreamWriter(configFilePath, false))
+        public async Task writeBasicTemplateAsync() {
+            using (StreamWriter writer = new StreamWriter(configFilePathTxt, false))
             {
-                await writer.WriteLineAsync("use directory =" + directory);
+                await writer.WriteLineAsync("use directory =");
             }
         }
     }

@@ -18,10 +18,21 @@ namespace FileRulette
             {
                 FirstTimeStart();
             }else
-            { 
-                ConfigReader configReader = new ConfigReader();
-                configReader.readConfig();
+            {
+                if (Directory.Exists(ConfigManipulation.configFilePathDir) && File.Exists(ConfigManipulation.configFilePathTxt))
+                {
+                    ConfigReader configReader = new ConfigReader();
+                    configReader.readConfig();
+                    ClerkWorker();
+                }
+                else
+                {
+                    ConfigCreator config = new ConfigCreator();
+                    config.configDirectoryCreate();
+                    creator.configFileCreate();
 
+                }
+                
             }
 
         }

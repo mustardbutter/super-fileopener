@@ -15,7 +15,7 @@ namespace FileRulette
         public string directory;
 
         public async void readConfig() {
-            using (StreamReader reader = new StreamReader(configFilePath))
+            using (StreamReader reader = new StreamReader(configFilePathTxt))
             {
                 configText = await reader.ReadToEndAsync();
             }
@@ -26,7 +26,7 @@ namespace FileRulette
             ConfigWriter writer = new ConfigWriter();
             if (configText == null)
             {
-                writer.writeBasicTemplateAsync(configFilePath);
+                writer.writeBasicTemplateAsync();
                 MessageBox.Show("Config file has nothing. We maded a new one");
             }
             else
