@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace FileRulette
 {
@@ -12,15 +13,15 @@ namespace FileRulette
     {
         private List<string> iternal_directories = new List<string>();
         private List<string> files = new List<string>();
-
-        public string rootDir { get; set; }
+        public static string gettedDir {get; set;}
 
         public void SearchFolders()
         {
-            foreach (string folders in Directory.EnumerateDirectories(rootDir))
+            foreach (string folders in Directory.EnumerateDirectories(gettedDir))
             {
-                iternal_directories.Add(folders);
+                 iternal_directories.Add(folders);
             }
+            
         }
 
         public void IndexFiles()
@@ -33,7 +34,7 @@ namespace FileRulette
                 this.files.Add(files);
             }
 
-            foreach (string files in Directory.EnumerateFiles(rootDir))
+            foreach (string files in Directory.EnumerateFiles(gettedDir))
             {
                 this.files.Add(files);
             }

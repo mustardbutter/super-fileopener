@@ -23,7 +23,10 @@ namespace FileRulette
                 {
                     ConfigReader configReader = new ConfigReader();
                     configReader.readConfig();
-                    ClerkWorker();
+                   
+                        ClerkWorker();
+                    
+                    
                 }
                 else
                 {
@@ -49,9 +52,17 @@ namespace FileRulette
 
         public void ClerkWorker() { 
         FileClerk fileClerk = new FileClerk();
-            fileClerk.SearchFolders();
-            fileClerk.IndexFiles();
-            fileClerk.ExecuteOne();
+            if (FileClerk.gettedDir != null || FileClerk.gettedDir != "")
+            {
+                fileClerk.SearchFolders();
+                fileClerk.IndexFiles();
+                fileClerk.ExecuteOne();
+            }
+            else
+            {
+                MessageBox.Show("Config is empty");
+            }
+            
         }
     }
 }

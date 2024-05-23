@@ -12,34 +12,29 @@ namespace FileRulette
     internal class ConfigReader : ConfigManipulation
     {
         string configText;
-        public string directory;
 
-        public async void readConfig() {
-            using (StreamReader reader = new StreamReader(configFilePathTxt))
-            {
-                configText = await reader.ReadToEndAsync();
-            }
+        public void readConfig() {
+            
+            configText = File.ReadAllText(configFilePathTxt);
+            Console.WriteLine(configText);
             imgDirectoryExtracter();
         }
 
         private void imgDirectoryExtracter() {
             ConfigWriter writer = new ConfigWriter();
-            if (configText == null)
+            if (configText == null || configText == "")
             {
-                writer.writeBasicTemplateAsync();
+                writer.writeBasicTemplate();
                 MessageBox.Show("Config file has nothing. We maded a new one");
             }
             else
             {
-                directory=configText.Remove(0,15);
-                directoryOverride();
+                
+                FileClerk.gettedDir = configText.Remove(0, 15);
+                Console.WriteLine(FileClerk.gettedDir);
             }
         }
 
-        private void directoryOverride() { 
-            FileClerk fileClerk = new FileClerk();
-            fileClerk.rootDir = directory;
-        }
 
     }
 }

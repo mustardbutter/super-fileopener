@@ -16,7 +16,7 @@ namespace FileRulette.Classes
         public void configFileCreate() {
             ConfigWriter writer = new ConfigWriter();
                 File.Create(configFilePathTxt);
-                writer.writeBasicTemplateAsync();
+                writer.writeBasicTemplate();
         }
     }
 }
