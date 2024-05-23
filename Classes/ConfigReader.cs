@@ -16,7 +16,6 @@ namespace FileRulette
         public void readConfig() {
             
             configText = File.ReadAllText(configFilePathTxt);
-            Console.WriteLine(configText);
             imgDirectoryExtracter();
         }
 
@@ -31,7 +30,6 @@ namespace FileRulette
             {
                 
                 FileClerk.gettedDir = configText.Remove(0, 15);
-                Console.WriteLine(FileClerk.gettedDir);
             }
         }
 
